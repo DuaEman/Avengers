@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5923903456257095963}
   - component: {fileID: 2684387906964457566}
   - component: {fileID: -5123560037606050288}
-  - component: {fileID: 1486724572}
+  - component: {fileID: 4377433660991419847}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Projectile
@@ -32,8 +32,7 @@ Transform:
   m_LocalPosition: {x: -571.70844, y: -53.65162, z: 22.764107}
   m_LocalScale: {x: 0.17, y: 0.16999999, z: 0.16999999}
   m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 543450653679126081}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 6.306, y: -89.291, z: 91.184}
@@ -110,13 +109,13 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 72
+  m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1486724572
+--- !u!114 &4377433660991419847
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,86 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpawnPoint: {fileID: 2946976874312512233}
-  projectilePrefab: {fileID: 641120107205389283}
   maxStretchDistance: 3
-  projectileForce: 5
-  upwardSpeed: 7
-  horizontalRange: 6
---- !u!1001 &63103402
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2946976874312512233}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 67c7fbfddda43054785022615c97c100, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67c7fbfddda43054785022615c97c100, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.62
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67c7fbfddda43054785022615c97c100, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4.62
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67c7fbfddda43054785022615c97c100, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 4.62
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67c7fbfddda43054785022615c97c100, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67c7fbfddda43054785022615c97c100, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67c7fbfddda43054785022615c97c100, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67c7fbfddda43054785022615c97c100, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67c7fbfddda43054785022615c97c100, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67c7fbfddda43054785022615c97c100, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67c7fbfddda43054785022615c97c100, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67c7fbfddda43054785022615c97c100, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67c7fbfddda43054785022615c97c100, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67c7fbfddda43054785022615c97c100, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67c7fbfddda43054785022615c97c100, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 67c7fbfddda43054785022615c97c100, type: 3}
-      propertyPath: m_Name
-      value: Grenade
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 67c7fbfddda43054785022615c97c100, type: 3}
---- !u!4 &543450653679126081 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67c7fbfddda43054785022615c97c100, type: 3}
-  m_PrefabInstance: {fileID: 63103402}
-  m_PrefabAsset: {fileID: 0}
+  projectileForce: 10
+  dragSpeed: 5
+  upwardSpeed: 5
+  horizontalRange: 3

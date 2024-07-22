@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Projectile
+  - Target
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - spaceship
   - Water
   - UI
   - 
