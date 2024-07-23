@@ -1,52 +1,25 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    public Text countdownText;
-    public Text gameOverText;
-    public float countdownTime = 30f;
-
-    private float currentTime;
-    private bool isGameOver;
-
-    void Start()
-    {
-        currentTime = countdownTime;
-        gameOverText.gameObject.SetActive(false);
-        isGameOver = false;
-    }
-
+    [SerializeField] TextMeshProUGUI timerTime;
+    [SerializeField] float remainingTime;
     void Update()
     {
-        if (isGameOver)
-            return;
-
-        currentTime -= Time.deltaTime;
-        countdownText.text = "Time Left: " + Mathf.Clamp(currentTime, 0, countdownTime).ToString("F2");
-
-        if (currentTime <= 0)
+        if(remainingTime > 0)
         {
-            GameOver();
+            remainingTime -= Time.deltaTime;
         }
-    }
-
-    void GameOver()
-    {
-        isGameOver = true;
-        gameOverText.gameObject.SetActive(true);
-        Invoke("RestartGame", 3f); // Restart the game after 3 seconds
-    }
-
-    void RestartGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void OnSpaceshipDestroyed()
-    {
-        // Reset the timer or perform other logic when a spaceship is destroyed
-        currentTime = countdownTime;
+        else if ( remainingTime < 0)
+        {
+            remainingTime = 0;
+            
+        }
+        int minutes = Mathf.FloorToInt(remainingTime / 60);
+        int seconds = Mathf.FloorToInt(remainingTime % 60);
+        timerTime.text = string.Format ("{0:00}:{1:00}", minutes, seconds);
     }
 }
