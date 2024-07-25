@@ -7,6 +7,7 @@ TagManager:
   - Projectile
   - Target
   - Floor
+  - GameMusic
   layers:
   - Default
   - TransparentFX

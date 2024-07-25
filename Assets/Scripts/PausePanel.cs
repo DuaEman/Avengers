@@ -19,7 +19,7 @@ public class PausePanel : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale=1f;
-        SceneManager.LoadScene("Mercury 1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void HometGame()
     {
