@@ -5,16 +5,31 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Mercury.unity
-    guid: 7e5d0781d7e7e9949b874dcabe0b7fff
   - enabled: 1
     path: Assets/Scenes/menu.unity
     guid: 509dbb97828f68e48962cc4017ad7192
+  - enabled: 1
+    path: Assets/Scenes/Mercury.unity
+    guid: c3b34349a11daaf4ab163fc215d523ff
   - enabled: 0
     path: Assets/Scenes/Mercury 1.unity
     guid: 99ba36babc77afe47b91fc137964e42f
   - enabled: 1
     path: Assets/Scenes/Venus.unity
     guid: 88b92bb042579134a97b1bef8e923aaf
+  - enabled: 1
+    path: Assets/Scenes/Earth.unity
+    guid: 959e6469b97bc9c46ae54fe179227007
+  - enabled: 1
+    path: Assets/Scenes/Mars.unity
+    guid: 717ee75dfc2d49d45914f0bc162ca22b
+  - enabled: 1
+    path: Assets/Scenes/Jupitor.unity
+    guid: eaf0d4f15dd016c4489f6301b0cb75bd
+  - enabled: 1
+    path: Assets/Scenes/Saturn.unity
+    guid: e2d78302864ab9f43860676c68525eda
+  - enabled: 1
+    path: Assets/Scenes/Neptune.unity
+    guid: 9cf4a9b561525c44b9f16a5e203f5a17
   m_configObjects: {}
