@@ -82,7 +82,7 @@ public class ONDestroy : MonoBehaviour
         winPanel.SetActive(true);
     }
 
-    private void GameOver()
+    public void GameOver()
     {
         Time.timeScale = 0; // Stop the game
         gameOverPanel.SetActive(true);
