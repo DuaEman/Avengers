@@ -24,7 +24,7 @@ public class PausePanel : MonoBehaviour
     public void HometGame()
     {
         Time.timeScale=1f;
-        SceneManager.LoadScene("menu");
+        SceneManager.LoadScene("menu 1");
     }
      
 }
