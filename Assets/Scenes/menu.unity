@@ -774,8 +774,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8, y: -245}
-  m_SizeDelta: {x: 608.8, y: 899.8}
+  m_AnchoredPosition: {x: -8, y: -277.1}
+  m_SizeDelta: {x: 608.8, y: 1025.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &665144639
 MonoBehaviour:
@@ -3243,6 +3243,14 @@ PrefabInstance:
       propertyPath: volumeSlider
       value: 
       objectReference: {fileID: 595838024}
+    - target: {fileID: 1037906313512442970, guid: 8812557ddd5ca644aa9a08539fe835fa, type: 3}
+      propertyPath: shootSoundObject
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037906313512442970, guid: 8812557ddd5ca644aa9a08539fe835fa, type: 3}
+      propertyPath: backgroundMusicObject
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1037906313512442971, guid: 8812557ddd5ca644aa9a08539fe835fa, type: 3}
       propertyPath: m_RootOrder
       value: 4
