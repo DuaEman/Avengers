@@ -1,98 +1,111 @@
-
-
 using UnityEngine;
+using System.Collections.Generic;
 
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Collider))]
 public class Slingshot : MonoBehaviour
 {
-    public Transform projectileSpawnPoint; // Point where the projectile will be spawned
-    public float maxStretchDistance = 3f; // Maximum distance the slingshot can stretch
-    public float projectileForce = 10f; // Force applied to the projectile
-    public float dragSpeed = 5f; // Speed of dragging the projectile
-    public float upwardSpeed = 5f; // Speed of upward movement after release
-    public float horizontalRange = 3f; // Maximum horizontal range for the projectile
+    public GameObject ballPrefab;  // Reference to the ball prefab
 
-    private Rigidbody projectileRigidbody;
-    private Vector3 startPosition;
+    private Vector3 dragStartPos;
+    private Vector3 dragEndPos;
     private bool isDragging = false;
-    private Vector3 targetPosition; // Position to move towards after release
+    private Rigidbody rb;
+    private bool isShoot = false;
+    private LineRenderer lineRenderer;
+
+    public float launchForceMultiplier = 10f;
+    public int trajectoryPointCount = 30;  // Number of trajectory points
+    public float timeBetweenPoints = 0.1f;  // Time between trajectory points
 
     void Start()
     {
-        projectileRigidbody = projectileSpawnPoint.GetComponentInChildren<Rigidbody>();
-        startPosition = projectileSpawnPoint.position;
+        rb = GetComponent<Rigidbody>();
+        rb.isKinematic = true;  // Ensure the ball starts as kinematic
+        lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.positionCount = trajectoryPointCount;  // Initialize line renderer with the correct number of points
+        lineRenderer.enabled = false;  // Hide the line renderer initially
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Assuming left mouse button for dragging
+        if (Input.GetMouseButtonDown(0))
         {
-            StartDragging();
+            StartDrag();
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButton(0) && isDragging)
         {
-            ReleaseProjectile();
+            ContinueDrag();
         }
-
-        if (isDragging)
+        else if (Input.GetMouseButtonUp(0) && isDragging)
         {
-            DragProjectile();
+            EndDrag();
         }
     }
 
-    void StartDragging()
+    void StartDrag()
     {
+        rb.isKinematic = false;  // Enable physics interactions when dragging
         isDragging = true;
-        // Set target position based on current mouse position
-        targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        targetPosition.z = 0f;
+        dragStartPos = Input.mousePosition;
+        UpdateLineRenderer();
+        lineRenderer.enabled = true;  // Show the line renderer
     }
 
-    void DragProjectile()
+    void ContinueDrag()
     {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = 0f;
-
-        // Calculate direction from slingshot start position to mouse position
-        Vector3 direction = (mousePosition - startPosition).normalized;
-
-        // Limit the maximum stretch distance
-        float distance = Vector3.Distance(mousePosition, startPosition);
-        if (distance > maxStretchDistance)
-        {
-            direction = direction.normalized;
-            projectileSpawnPoint.position = startPosition + direction * maxStretchDistance;
-        }
-        else
-        {
-            projectileSpawnPoint.position = mousePosition;
-        }
+        Vector3 currentMousePos = Input.mousePosition;
+        dragEndPos = currentMousePos;
+        UpdateLineRenderer();
     }
 
-    void ReleaseProjectile()
+    void EndDrag()
     {
         isDragging = false;
+        lineRenderer.enabled = false;  // Hide the line renderer
+        LaunchBall();
+    }
 
-        // Calculate direction towards target position
-        Vector3 direction = (targetPosition - startPosition).normalized;
+    void LaunchBall()
+    {
+        if (isShoot)
+            return;
 
-        // Apply force in the calculated direction
-        Vector3 velocity = direction * projectileForce;
+        Vector3 dragVector = dragStartPos - dragEndPos;
+        Vector3 launchDirection = new Vector3(dragVector.x, dragVector.y, dragVector.magnitude); // Adjust for 3D
+        rb.AddForce(launchDirection * launchForceMultiplier);
+        isShoot = true;
 
-        // Add upward velocity
-        velocity += Vector3.up * upwardSpeed;
+        // Destroy the current ball after a short delay
+        Destroy(gameObject, 2f);  // Adjust the delay as needed
 
-        // Apply the combined velocity to the projectile
-        projectileRigidbody.velocity = velocity;
+        // Spawn a new ball at the position of the previous ball
+        GameObject newBall = Instantiate(ballPrefab, transform.position, transform.rotation);
+        Rigidbody newBallRb = newBall.GetComponent<Rigidbody>();
+        newBallRb.velocity = Vector3.zero;  // Reset velocity to zero
+        newBallRb.angularVelocity = Vector3.zero;  // Reset angular velocity to zero
+        newBallRb.isKinematic = true;  // Set the new ball to be kinematic
+        newBall.GetComponent<Slingshot>().isShoot = false;  // Reset isShoot flag
+    }
 
-        // Reset projectile position
-        projectileSpawnPoint.position = startPosition;
+    void UpdateLineRenderer()
+    {
+        Vector3 dragVector = dragStartPos - dragEndPos;
+        Vector3 launchDirection = new Vector3(dragVector.x, dragVector.y, dragVector.magnitude); // Adjust for 3D
 
-        // Constrain horizontal movement within a range
-        projectileRigidbody.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
+        List<Vector3> trajectoryPoints = new List<Vector3>();
+        Vector3 currentPosition = transform.position;
+        Vector3 currentVelocity = launchDirection * launchForceMultiplier / rb.mass;
 
-        // Apply a position clamp to restrict horizontal movement
-        Vector3 clampedPosition = projectileRigidbody.position;
-        clampedPosition.x = Mathf.Clamp(clampedPosition.x, -horizontalRange, horizontalRange);
-        projectileRigidbody.position = clampedPosition;
+        // Simulate the trajectory points
+        for (int i = 0; i < trajectoryPointCount; i++)
+        {
+            trajectoryPoints.Add(currentPosition);
+            currentVelocity += Physics.gravity * timeBetweenPoints;
+            currentPosition += currentVelocity * timeBetweenPoints;
+        }
+
+        lineRenderer.positionCount = trajectoryPoints.Count;
+        lineRenderer.SetPositions(trajectoryPoints.ToArray());
     }
 }
