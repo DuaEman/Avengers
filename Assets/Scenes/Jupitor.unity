@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2addd4d6c7494e4985bd6a24a8f0589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 7839167258128169976, guid: b1e2487c4f5dece48b4fcb6db2274e3a, type: 3}
 --- !u!65 &1976774
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -225,6 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2addd4d6c7494e4985bd6a24a8f0589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 7839167258128169976, guid: b1e2487c4f5dece48b4fcb6db2274e3a, type: 3}
 --- !u!136 &69830940
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -927,6 +929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2addd4d6c7494e4985bd6a24a8f0589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 7839167258128169976, guid: b1e2487c4f5dece48b4fcb6db2274e3a, type: 3}
 --- !u!114 &265939810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1807,6 +1810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2addd4d6c7494e4985bd6a24a8f0589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 7839167258128169976, guid: b1e2487c4f5dece48b4fcb6db2274e3a, type: 3}
 --- !u!136 &453772154
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2244,6 +2248,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1302653926, guid: 2423f1ad3e06a2149a65c4e83dd3a05f, type: 3}
+      propertyPath: particleEffect
+      value: 
+      objectReference: {fileID: 7839167258128169976, guid: b1e2487c4f5dece48b4fcb6db2274e3a, type: 3}
     - target: {fileID: 6990467825737043829, guid: 2423f1ad3e06a2149a65c4e83dd3a05f, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -2415,6 +2423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2addd4d6c7494e4985bd6a24a8f0589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 7839167258128169976, guid: b1e2487c4f5dece48b4fcb6db2274e3a, type: 3}
 --- !u!114 &532312998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2965,6 +2974,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 532312992, guid: 53ee20f69860a6c45bbbcf195f663423, type: 3}
+      propertyPath: particleEffect
+      value: 
+      objectReference: {fileID: 7839167258128169976, guid: b1e2487c4f5dece48b4fcb6db2274e3a, type: 3}
     - target: {fileID: 2660845817516069264, guid: 53ee20f69860a6c45bbbcf195f663423, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -3513,6 +3526,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1302653926, guid: 2423f1ad3e06a2149a65c4e83dd3a05f, type: 3}
+      propertyPath: particleEffect
+      value: 
+      objectReference: {fileID: 7839167258128169976, guid: b1e2487c4f5dece48b4fcb6db2274e3a, type: 3}
     - target: {fileID: 6990467825737043829, guid: 2423f1ad3e06a2149a65c4e83dd3a05f, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -4320,6 +4337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2addd4d6c7494e4985bd6a24a8f0589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 7839167258128169976, guid: b1e2487c4f5dece48b4fcb6db2274e3a, type: 3}
 --- !u!65 &1093404794
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4583,6 +4601,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1302653926, guid: 2423f1ad3e06a2149a65c4e83dd3a05f, type: 3}
+      propertyPath: particleEffect
+      value: 
+      objectReference: {fileID: 7839167258128169976, guid: b1e2487c4f5dece48b4fcb6db2274e3a, type: 3}
     - target: {fileID: 6990467825737043829, guid: 2423f1ad3e06a2149a65c4e83dd3a05f, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -4845,15 +4867,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6861745937669351120, guid: 53ee20f69860a6c45bbbcf195f663423, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.71
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6861745937669351120, guid: 53ee20f69860a6c45bbbcf195f663423, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.79
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6861745937669351120, guid: 53ee20f69860a6c45bbbcf195f663423, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.09
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 6861745937669351120, guid: 53ee20f69860a6c45bbbcf195f663423, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4861,11 +4883,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6861745937669351120, guid: 53ee20f69860a6c45bbbcf195f663423, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.84
+      value: -0.9
       objectReference: {fileID: 0}
     - target: {fileID: 6861745937669351120, guid: 53ee20f69860a6c45bbbcf195f663423, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.25
+      value: -6.9
       objectReference: {fileID: 0}
     - target: {fileID: 6861745937669351120, guid: 53ee20f69860a6c45bbbcf195f663423, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5228,6 +5250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2addd4d6c7494e4985bd6a24a8f0589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 7839167258128169976, guid: b1e2487c4f5dece48b4fcb6db2274e3a, type: 3}
 --- !u!54 &1379747720
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5393,6 +5416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2addd4d6c7494e4985bd6a24a8f0589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 7839167258128169976, guid: b1e2487c4f5dece48b4fcb6db2274e3a, type: 3}
 --- !u!65 &1430849251
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6026,6 +6050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2addd4d6c7494e4985bd6a24a8f0589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 7839167258128169976, guid: b1e2487c4f5dece48b4fcb6db2274e3a, type: 3}
 --- !u!65 &1627682369
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6099,7 +6124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1645374355
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11640,11 +11665,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2946976874312512233, guid: 9ae28c2d1fd894f4f96b1b712b616191, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.431
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 2946976874312512233, guid: 9ae28c2d1fd894f4f96b1b712b616191, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.02
+      value: -7.54
       objectReference: {fileID: 0}
     - target: {fileID: 2946976874312512233, guid: 9ae28c2d1fd894f4f96b1b712b616191, type: 3}
       propertyPath: m_LocalRotation.w

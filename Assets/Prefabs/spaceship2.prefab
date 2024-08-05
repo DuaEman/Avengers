@@ -266,17 +266,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6861745937669351120}
-  - component: {fileID: 105012597}
   - component: {fileID: 105012599}
-  - component: {fileID: 105012601}
-  - component: {fileID: 532312992}
   m_Layer: 3
   m_Name: spaceship2
-  m_TagString: Target
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6861745937669351120
 Transform:
   m_ObjectHideFlags: 0
@@ -286,29 +283,13 @@ Transform:
   m_GameObject: {fileID: 6084927420307258474}
   m_LocalRotation: {x: -0.0029042887, y: -0.7112061, z: -0.7029775, w: 0.00044082108}
   m_LocalPosition: {x: 2.35, y: 3.53, z: 0}
-  m_LocalScale: {x: -0.29, y: -0.29, z: -0.29}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.5, y: 0.8, z: 0.75}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2079638580205151503}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -449.30402, y: -196.531, z: -343.198}
---- !u!54 &105012597
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6084927420307258474}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &105012599
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -320,30 +301,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.041355, y: 0.44459495, z: 1.9434303}
-  m_Center: {x: 0.0055005774, y: 1.3191248, z: -1.129458}
---- !u!114 &105012601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6084927420307258474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47a8cad96571ce74c80d05f25fc56aa0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  downwardSpeed: 0.1
---- !u!114 &532312992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6084927420307258474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2addd4d6c7494e4985bd6a24a8f0589, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Size: {x: 2.041355, y: 0.4220729, z: 2.0111487}
+  m_Center: {x: 0.0055005853, y: 1.3078604, z: -1.0955986}
