@@ -8,12 +8,18 @@ public class SimpleDestroy : MonoBehaviour
     private void Start()
     {
         objectManager = FindObjectOfType<ONDestroy>();
+        if (objectManager == null)
+        {
+            Debug.LogError("ONDestroy object not found!");
+        }
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if (objectManager != null)
         {
+            Debug.Log("Collision detected with: " + collision.gameObject.name);
+
             objectManager.HandleCollision(gameObject, collision.gameObject.tag);
 
             // Instantiate the particle effect at the object's position and rotation
@@ -21,22 +27,16 @@ public class SimpleDestroy : MonoBehaviour
             {
                 GameObject instantiatedParticleEffect = Instantiate(particleEffect, transform.position, transform.rotation);
 
-                // Get the ParticleSystem component to determine its duration
-                ParticleSystem ps = instantiatedParticleEffect.GetComponent<ParticleSystem>();
-                if (ps != null)
-                {
-                    // Destroy the particle effect after it finishes playing
-                    Destroy(instantiatedParticleEffect, ps.main.duration + ps.main.startLifetime.constantMax);
-                }
-                else
-                {
-                    // If no ParticleSystem component is found, destroy it after a default duration
-                    Destroy(instantiatedParticleEffect, 2f); // Adjust the default duration if necessary
-                }
+                // Destroy the particle effect after 1 second
+                Destroy(instantiatedParticleEffect, 1f);
             }
 
             // Destroy the game object
             Destroy(gameObject);
+        }
+        else
+        {
+            Debug.LogWarning("objectManager is null in OnCollisionEnter.");
         }
     }
 }

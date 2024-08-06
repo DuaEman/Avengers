@@ -1,5 +1,6 @@
-using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class ONDestroy : MonoBehaviour
 {
@@ -78,8 +79,14 @@ public class ONDestroy : MonoBehaviour
 
     private void Win()
     {
+        StartCoroutine(ShowWinPanelAfterDelay(3.0f)); // Start the coroutine with a 2-second delay
+    }
+
+    private IEnumerator ShowWinPanelAfterDelay(float delay)
+    {
         Time.timeScale = 0; // Stop the game
-        winPanel.SetActive(true);
+        yield return new WaitForSecondsRealtime(delay); // Wait for the specified delay in real time
+        winPanel.SetActive(true); // Show the win panel
     }
 
     public void GameOver()
