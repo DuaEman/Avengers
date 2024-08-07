@@ -24,7 +24,7 @@ public class SceneLoader : MonoBehaviour
     }
     public void Level4()
     {
-        SceneManager.LoadScene("Mars");
+        SceneManager.LoadScene("Mars 2");
     }
     public void Level5()
     {

@@ -14,6 +14,9 @@ public class ONDestroy : MonoBehaviour
 
     private void Start()
     {
+        // Ensure the game time scale is reset to 1
+        Time.timeScale = 1;
+        
         winPanel.SetActive(false);
         gameOverPanel.SetActive(false);
 
@@ -79,7 +82,7 @@ public class ONDestroy : MonoBehaviour
 
     private void Win()
     {
-        StartCoroutine(ShowWinPanelAfterDelay(3.0f)); // Start the coroutine with a 2-second delay
+        StartCoroutine(ShowWinPanelAfterDelay(0.5f)); // Start the coroutine with a 2-second delay
     }
 
     private IEnumerator ShowWinPanelAfterDelay(float delay)
@@ -93,5 +96,11 @@ public class ONDestroy : MonoBehaviour
     {
         Time.timeScale = 0; // Stop the game
         gameOverPanel.SetActive(true);
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1; // Reset the game time scale
+        // Implement your game restart logic here, e.g., reload the current level or reset game state
     }
 }
